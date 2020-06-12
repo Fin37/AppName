@@ -3,8 +3,13 @@
   <div class="container-fluid">
     <div class="row">
       <main role="main" class="col error404">
-        <h1><%= error.status %></h1>
-        <h3><%= message %></h3>
+        <div class="error-message">
+          <h1><%= error.status %></h1>
+          <div class="errorcontainer">
+          <h3>Something happened...</h3>
+          <h6>Go back</h6>
+        </div>
+        </div>
       </main>
     </div> <!-- end .row --> 
   </div><!-- end .container-fluid -->
