@@ -62,23 +62,28 @@ a i {
   background-color: indianred;
 }
 
-.email, .password {
-  margin-top: 50px;
-  text-align: start;
-  font-size: 30px;
-}
-
-.inputemail, .inputpassword {
-  background-color: white;
+.form-group label {
   width: 700px;
-  height: 50px;
+  font-size: 20px;
+  text-align: start;
 }
 
-#loginbtn {
-  margin-top: 50px;;
+.buttoncontainer {
+  margin-top: 30px;
   font-size: 25px;
   background-color: white;
   width: 700px;
+  border-radius: 4px;
+}
+
+.register h4 {
+  margin-top: 20px;
+  color: #00B7FF;
+}
+
+.register h4:hover {
+  cursor: pointer;
+
 }
 
 
