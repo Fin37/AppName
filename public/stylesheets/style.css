@@ -59,13 +59,11 @@ a i {
 #loginheader {
   font-size: 60px;
   height: 500px;
-  background-color: indianred;
+  background-image: linear-gradient(rgb(191, 189, 189), rgba(168, 141, 247));
 }
 
-.form-group label {
-  width: 700px;
-  font-size: 20px;
-  text-align: start;
+#form {
+  border-radius: 0px;
 }
 
 .buttoncontainer {
@@ -73,17 +71,27 @@ a i {
   font-size: 25px;
   background-color: white;
   width: 700px;
+  height: 35px;
   border-radius: 4px;
+  text-align: center;
+}
+
+.loginbutton {
+  padding: 12px 0;
 }
 
 .register h4 {
   margin-top: 20px;
-  color: #00B7FF;
+  color: #3E71F0;
+}
+
+#formcontainer {
+  text-align: start;
+  font-size: 25px;
 }
 
 .register h4:hover {
   cursor: pointer;
-
 }
 
 
