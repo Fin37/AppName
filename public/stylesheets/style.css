@@ -67,10 +67,6 @@ a i {
   margin-top: 15px;
 }
 
-#emailinput {
-  width: 400px;
-}
-
 a:link {
   text-decoration: none;
   color: black;
@@ -104,14 +100,6 @@ a:link {
 .register h4 {
   margin-top: 20px;
   color: #3E71F0;
-}
-
-#formcontainer {
-  margin-top: 40px;
-  margin-left: 45px;
-  text-align: start;
-  font-size: 25px;
-  width: 600px;
 }
 
 #pwdlabel {
