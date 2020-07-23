@@ -91,10 +91,6 @@ a:link {
   text-align: center;
 }
 
-.buttoncontainer h1{
-  margin-top: 5px;
-}
-
 .buttoncontainer:hover{
   background-color: darkgrey;
   cursor: pointer;
