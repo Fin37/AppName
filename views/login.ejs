@@ -21,7 +21,7 @@
                 <div class="row" id="formcontainer">
                     <div class="col"></div>
                     <div class="col-md-9" id="middle">
-                        <form class="form" autocomplete="off" id="emailinput">
+                        <form class="form" action="/login" method="post" autocomplete="off" id="emailinput">
                             <label for="email" id="emailabel">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Email..">
             
@@ -29,7 +29,9 @@
                             <input type="password" class="form-control" id="pwd" placeholder="Password..">
                         </form>
                         <a class="loginbtn" href="/">
-                            <div class="buttoncontainer"><h2>Login</h2></div>
+                            <button type="submit">
+                                <div class="buttoncontainer"><h2>Login</h2></div>
+                            </button>
                         </a>
                         <div class="registercontainer">
                             <a class="register"><h4>Not with us? Sign up here</h4></a>
