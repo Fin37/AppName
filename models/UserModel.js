@@ -83,6 +83,7 @@ class UserModel{
         // Check is email is valid and password is over 6 chars
         var { valid, errors } = AraDTValidator.loginValid(user);
     
+        console.log(user)
         if (!valid) {
             // Validation failed, so return errors
             throw new Error(errors);

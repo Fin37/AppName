@@ -20,8 +20,8 @@ class UserController{
         this.setVariables();
 
         // Add all routing middleware for user endpoints
+        AraDTApp.get('/register', this.signup);
         AraDTApp.post('/register', this.register);
-        AraDTApp.get('/signup', this.signup);
         AraDTApp.post('/login', this.login);
         AraDTApp.get('/logout', this.logout);
         AraDTApp.get('/account', this.getAccount);
@@ -124,19 +124,22 @@ class UserController{
     /* YOU NEED TO ADD COMMENTS FROM HERE ON */
 
     updateAccount =  async (request, response) => {
-
+        // Seeing if the form submission is valid
         var currentUser = AraDTUserModel.getCurrentUser();
         if (currentUser) {
             try{
                 await AraDTUserModel.update(request, response)
                     .then(() => {
                         response.locals.errors.profile = ['Your details have been updated'];
+                        // The account has been updated and now render updated details
                         response.render('account');
                     }).catch((error) => {
                         response.locals.errors.profile = [error.message];
+                        // Firebase database doesnt update so return firebase errors
                         response.render('account');
                     });
             } catch(errors) {
+                // Form fails validation and returns an error
                 response.locals.errors.profile = errors;
                 response.render('account');
             }
@@ -147,30 +150,33 @@ class UserController{
     };
     
     updatePassword = async (request, response) => {
-
+        // Seeing if the form submission is valid
         var currentUser = AraDTUserModel.getCurrentUser();
         if (currentUser) {
             try{
                 await AraDTUserModel.updatePassword(request, response)
                     .then(() => {
                         response.locals.errors.password = ['Your password has been updated'];
+                        // The password was updated and can now show updated details
                         response.render('account');
                     }).catch((error) => {
                         response.locals.errors.password = [error.message];
+                        // Firebase database doesnt update so return firebase errors
                         response.render('account');
                     });
             } catch(errors) {
+                // Form fails validation and returns an error
                 response.locals.errors.password = errors;
                 response.render('account');
             }
         } else {
+            // Runs if the user is logged out or theres a miscellanious error
             this.logout(request, response);
         }
 
     };
 
     getAccount(request, response){
-        
         if (!request.session.token) {
             response.redirect('/');
         }
@@ -179,9 +185,11 @@ class UserController{
 
     logout = async (request, response) => {
         request.session.errors.general = ['You have been logged out'];
+        // The session has ended and can be cut off, setting it to false
         response.locals.loggedin = false;
         request.session.destroy();
         await AraDTDatabase.firebase.auth().signOut().then(function() {
+            // Requesting firebase to fully logout the exisitng user, then redirect to login page
                 response.redirect('/');
             }).catch(function(error) {
                 response.redirect('/');
