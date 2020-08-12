@@ -27,12 +27,17 @@ class UserController{
         AraDTApp.get('/account', this.getAccount);
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
+        AraDTApp.get('/home', this.home);
     }
     
 
     // Renders home page ./views/index.ejs
     signup(request, response, next) {
         response.render('register');
+    }
+
+    home(request, response, next) {
+        response.render('home');
     }
 
     /**

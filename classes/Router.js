@@ -39,6 +39,7 @@ class Router{
     addBaseRoutes() {
         AraDTApp.get('/', this.index);
         AraDTApp.get('/register', this.signup);
+        AraDTApp.get('/home', this.home);
     }
 
     signup(request, response){
