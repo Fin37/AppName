@@ -22,6 +22,11 @@
                         <button type="submit">
                             <a href="/home"class="buttoncontainer"><h2>Register</h2></a>
                         </button>
+                    <% if (locals.errors && locals.errors.register) { %>
+                        <% locals.errors.register.forEach(function(error) { %>
+                            <p class="alert alert-primary" role="alert"><%= error %></p>
+                        <% }) %>
+                    <% } %>
                     </form>
                     <div class="registercontainer">
                         <a class="register" href="/"><h4>Already have an account? Sign in here</h4></a>

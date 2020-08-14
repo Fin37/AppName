@@ -19,6 +19,11 @@
                         <button type="submit">
                             <div class="buttoncontainer"><h2>Login</h2></div>
                         </button>
+                    <% if (locals.errors && locals.errors.login) { %>
+                        <% locals.errors.login.forEach(function(error) { %>
+                            <p class="alert alert-primary" role="alert"><%= error %></p>
+                        <% }) %>
+                    <% } %>
                     </form>
                     <div class="registercontainer">
                         <a class="register" href="/register"><h4>Not with us? Sign up here</h4></a>
