@@ -28,6 +28,7 @@ class UserController{
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
         AraDTApp.get('/home', this.home);
+        AraDTApp.get('/welcome', this.welcome);
     }
     
 
@@ -42,6 +43,14 @@ class UserController{
 
     home(request, response, next) {
         response.render('home');
+    }
+
+    welcome(request, response, next) {
+        response.render('welcome');
+    }
+
+    account(request, response, next) {
+        response.render('account');
     }
 
     /**
@@ -85,7 +94,7 @@ class UserController{
             await AraDTUserModel.login(request, response)
                 .then(() => {
                     // Login successful, so redirect to account
-                    response.redirect('/account');
+                    response.redirect('/home');
                 }).catch((error) => {
                     // Firebase login has failed, so return Firebase errors
                     request.session.errors.login = [error.message];
@@ -117,7 +126,7 @@ class UserController{
             await AraDTUserModel.register(request, response)
                 .then(() => {
                     // registration successful, so redirect to account
-                    response.redirect('/account');
+                    response.redirect('/welcome');
                 }).catch((error) => {
                     // Firebase registration has failed, so return Firebase errors
                     request.session.errors.register = [error.message];

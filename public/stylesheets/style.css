@@ -71,7 +71,7 @@ a i {
 }
 
 .form {
-  font-size: 20px;
+  font-size: 16px;
   text-align: start;
   margin-top: 30px;
 }
@@ -105,10 +105,6 @@ a:link {
   color: #3E71F0;
 }
 
-#pwdlabel {
-  margin-top: 30px;
-}
-
 .registercontainer {
   margin-top: 30px;
 }
@@ -118,16 +114,121 @@ a:link {
 }
 
 
-/* Account Page */
+/* Welcome Page */
 
-#account-header {
-  height: 700px;
-  background-color: black;
+.welcome-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #9781A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#profile-title {
-  color: white;
+.welcome {
+  width: 800px;
+  height: 800px;
+  background-color: #3E71F0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
+.contbutton-container {
+  width: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
 
+.continue-button {
+  color: black;
+  height: 60px;
+  width: 50%;
+  border: none;
+}
+
+@media all and (max-width: 800px) {
+  .welcome-container {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+
+/* Home Page */
+
+#toprow {
+  height: 100px;
+}
+
+#search, #list, #info {
+  background-color: grey;
+}
+
+#chat {
+  background-color: darkgrey;
+}
+
+#middlerow {
+  height: 800px;
+}
+
+#bottomrow {
+  height: 100px;
+}
+
+
+/* Account Page */
+
+#fname, #lname, #pwdlabel {
+  margin-top: 30px;
+}
+
+#icon-container {
+  display: flex;
+  justify-content: end;
+}
+
+#topacc, #botacc {
+  height: 100px;
+}
+
+#middacc {
+  height: 900px;
+}
+
+#account-container {
+  background-color: rgb(218, 218, 218);
+  text-align: center;
+}
+
+#exit-row {
+  height: 30px;
+}
+
+#gidgets {
+  height: 200px;
+}
+
+.status {
+  text-align: start;
+}
+
+#status-cont, #profilepic-cont {
+  display: flex;
+  align-items: center;
+}
+
+#updates {
+  height: 500px;
+}
+
+#update-btn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+}
