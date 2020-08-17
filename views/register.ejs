@@ -3,7 +3,7 @@
     <div class="row" id="topmargin"></div>
     <div class="row" id="login">
         <div class="col-md-3"></div>
-        <div class="col-md-6" id="loginheader">
+        <div class="col-md-6" id="registerheader">
             <div class="row" id="logintitle">
                 <div class="title"><h1>Sign Up</h1></div>
             </div>
@@ -12,16 +12,14 @@
                 <div class="col-md-9" id="middle">
                     <form class="form" action="/register" method="post" autocomplete="off" id="emailinput">
                         <label for="email" id="emailabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Email..">
+                        <input type="email" name="email" class="form-control" id="email">
         
                         <label for="password" id="pwdlabel">Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd" placeholder="Password..">
+                        <input type="password" name="password" class="form-control" id="pwd">
 
                         <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password..">
-                        <button type="submit">
-                            <a href="/home"class="buttoncontainer"><h2>Register</h2></a>
-                        </button>
+                        <input type="password" name="passwordConfirm" class="form-control">
+                        <a href="/welcome" class="btn" type="submit" role="button" id="register-btn"><h3>Register</h3></a>
                     <% if (locals.errors && locals.errors.register) { %>
                         <% locals.errors.register.forEach(function(error) { %>
                             <p class="alert alert-primary" role="alert"><%= error %></p>

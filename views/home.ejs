@@ -1,8 +1,19 @@
 <%- include('partials/head'); %> 
 <div class="home">
     <div class="row" id="toprow">
-        <div class="col-3" id="search"></div>
-        <div class="col-9" id="namedisplay"></div>
+        <div class="col-3" id="search">
+            <div class="row">
+                <div class="col-10"><h3>Search</h3></div>
+                <div class="col-2"><h4>Icon</h4></div>
+            </div>
+        </div>
+        <div class="col-9" id="namedisplay">
+            <div class="row">
+                <div class="col-4"><h1>Friends Profile</h1></div>
+                <div class="col-4"><h3>Icons</h3></div>
+                <div class="col-4"><h3>Logout btn</h3></div>
+            </div>
+        </div>
     </div>
     <div class="row" id="middlerow">
         <div class="col-3" id="list"></div>
@@ -10,9 +21,26 @@
     </div>
     <div class="row" id="bottomrow">
         <div class="col-3" id="info">
-            <a class="view-profile" href="/account">View Profile</a>
+            <div class="row">
+                <div class="col-6">
+                    <h1>Profile Picture</h1>
+                </div>
+                <div class="col-6">
+                    <h5>Profile Name</h5>
+                    <a class="view-profile" href="/account">View Profile</a>
+                </div>
+            </div>
         </div>
-        <div class="col-9"></div>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-8">
+                    <h1>Text Input</h1>
+                </div>
+                <div class="col-4">
+                    <h4>Icons</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <%- include('partials/footer'); %> 

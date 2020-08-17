@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-5" id="profilepic-cont">
                     <div class="profile-picture">
-                        <img src="../public/images/black.jpeg" class="img-circle" alt="Cinque Terre">
+                        <img src="32325.png" class="img-circle">
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -36,26 +36,26 @@
                 <div class="col-10">
                     <form class="form" action="/account" method="post" autocomplete="off" id="emailinput">
                         <label for="email" id="emailabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Email..">
+                        <input type="email" name="email" class="form-control" id="email">
             
                         <label for="fname" id="fname">First Name</label>
-                        <input type="text" name="fname" class="form-control" placeholder="First Name..">
+                        <input type="text" name="fname" class="form-control">
                         
                         <label for="lname" id="lname">Last Name</label>
-                        <input type="text" name="lname" class="form-control" placeholder="Last Name..">
+                        <input type="text" name="lname" class="form-control">
                         
                         <label for="password" id="pwdlabel">Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd" placeholder="Password..">
+                        <input type="password" name="password" class="form-control" id="pwd">
                         
                         <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password..">
+                        <input type="password" name="passwordConfirm" class="form-control">
                         <% if (locals.errors && locals.errors.updateAccount) { %>
                             <% locals.errors.updateAccount.forEach(function(error) { %>
                                 <p class="alert alert-primary" role="alert"><%= error %></p>
                             <% }) %>
                         <% } %>
                     </form>
-                    <a href="#" class="btn" type="submit" role="button" id="update-btn"><h3>Change Settings</h3></a>
+                    <a href="#" class="btn" type="submit" role="button" id="update-btn"><h3>Save Changes</h3></a>
                 </div>
                 <div class="col-1"></div>
             </div>

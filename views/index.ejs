@@ -10,15 +10,13 @@
             <div class="row" id="formcontainer">
                 <div class="col"></div>
                 <div class="col-md-9" id="middle">
-                    <form class="form" action="/login" method="post" autocomplete="off" id="emailinput">
+                    <form class="form" action="/login" method="post" autocomplete="off"">
                         <label for="email" id="emailabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Email..">
+                        <input type="email" name="email" class="form-control" id="email"">
         
                         <label for="password" id="pwdlabel">Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd" placeholder="Password..">
-                        <button type="submit">
-                            <div class="buttoncontainer"><h2>Login</h2></div>
-                        </button>
+                        <input type="password" name="password" class="form-control" id="pwd"">
+                        <a href="/home" class="btn" type="submit" role="button" id="login-btn"><h3>Login</h3></a>
                     <% if (locals.errors && locals.errors.login) { %>
                         <% locals.errors.login.forEach(function(error) { %>
                             <p class="alert alert-primary" role="alert"><%= error %></p>

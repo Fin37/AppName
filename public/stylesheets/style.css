@@ -81,19 +81,13 @@ a:link {
   color: black;
 }
 
-.buttoncontainer {
-  color: black;
+#login-btn, #register-btn {
   margin-top: 30px;
+  width: 100%;
+  height: 40px;
   background-color: #EAE1DF;
-  height: 45px;
-  border-radius: 4px;
-  padding: 4px;
-  text-align: center;
-}
-
-.buttoncontainer:hover{
-  background-color: darkgrey;
-  cursor: pointer;
+  color: black;
+  padding: 0;
 }
 
 .loginbutton {
@@ -103,6 +97,11 @@ a:link {
 .register h4 {
   margin-top: 20px;
   color: #3E71F0;
+}
+
+#registerheader {
+  height: 600px;
+  background-image: linear-gradient(#9781A8, rgb(191, 189, 189));
 }
 
 .registercontainer {
@@ -162,6 +161,11 @@ a:link {
 
 #toprow {
   height: 100px;
+}
+
+#search {
+  border-style: solid;
+  border-color: whitesmoke;
 }
 
 #search, #list, #info {
