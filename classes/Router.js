@@ -1,4 +1,5 @@
 var UserController = require('../controllers/UserController');
+var ChannelController = require('../controllers/ChannelController');
 var createError = require('http-errors');
 
 /**
@@ -38,10 +39,7 @@ class Router{
      */
     addBaseRoutes() {
         AraDTApp.get('/', this.index);
-    }
-
-    account(request, response){
-        response.render('account');
+        AraDTApp.get('/register', this.register);
     }
 
     /**
@@ -50,12 +48,18 @@ class Router{
      */
     addControllers() {
         var userController = new UserController();
+        var channelController = new ChannelController();
     }
 
     // Renders home page ./views/index.ejs
     index(request, response, next) {
         response.render('index');
     }
+
+    register(request, response, next) {
+        response.render('register');
+    }
+
 
     // Adds middleware to add HTTP Error to 404 requests
     handle404s() {

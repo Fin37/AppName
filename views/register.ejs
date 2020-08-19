@@ -19,7 +19,7 @@
 
                         <label for="passconfirm" id="pwdlabel">Confirm Password</label>
                         <input type="password" name="passwordConfirm" class="form-control">
-                        <a href="/welcome" class="btn" type="submit" role="button" id="register-btn"><h3>Register</h3></a>
+                        <button href="/welcome" class="btn" type="submit" role="button" id="register-btn"><h3>Register</h3></button>
                     <% if (locals.errors && locals.errors.register) { %>
                         <% locals.errors.register.forEach(function(error) { %>
                             <p class="alert alert-primary" role="alert"><%= error %></p>
