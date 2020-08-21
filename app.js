@@ -52,10 +52,10 @@ var ImageUpload = require('./classes/ImageUpload');
 AraDTImageUpload = new ImageUpload();
 var Validator = require('./classes/Validator');
 AraDTValidator = new Validator();
-var ChannelModel = require('./models/ChannelModel')
-AraDTValidator = new ChannelModel();
 var UserModel = require('./models/UserModel');
 AraDTUserModel = new UserModel();
+var ChannelModel = require('./models/ChannelModel');
+AraDTChannelModel = new ChannelModel();
 var Router = require('./classes/Router');
 AraDTRouter = new Router();
 

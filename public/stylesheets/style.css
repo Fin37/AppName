@@ -187,7 +187,7 @@ a:link {
 
 /* Account Page */
 
-#fname, #lname, #pwdlabel {
+#fname, #lname, #pwdlabel, #emaillabel {
   margin-top: 30px;
 }
 
@@ -230,9 +230,30 @@ a:link {
   height: 500px;
 }
 
+.profile-picture {
+  height: 200px;
+  display: flex;
+}
+
 #update-btn {
   margin-top: 20px;
   width: 100%;
   background-color: black;
   color: whitesmoke;
+}
+
+#output {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+#selectpic {
+  display: none;
+}
+
+.fa-times {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 2.0em;
 }

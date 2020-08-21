@@ -29,6 +29,7 @@ class UserController{
         AraDTApp.post('/password', this.updatePassword);
         AraDTApp.get('/home', this.home);
         AraDTApp.get('/welcome', this.welcome);
+        AraDTApp.get('/accountfeedback', this.accountfeedback);
     }
     
 
@@ -51,6 +52,10 @@ class UserController{
 
     account(request, response, next) {
         response.render('account');
+    }
+
+    accountfeedback(request, response, next) {
+        response.render('accountfeedback');
     }
 
     /**

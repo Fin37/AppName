@@ -45,7 +45,7 @@
                         
                         <label for="passconfirm" id="pwdlabel">Confirm Password</label>
                         <input type="password" name="passwordConfirm" class="form-control">
-                        <button class="btn" type="submit" role="button" id="update-btn" href="/accountfeedback"><h3>Save Changes</h3></button>
+                        <div class="btn" type="submit" role="button" id="update-btn"><h3>Changes Saved</h3></div>
                         <% if (locals.errors && locals.errors.profile) { %>
                             <% locals.errors.profile.forEach(function(error) { %>
                                 <p class="alert alert-primary" role="alert"><%= error %></p>
@@ -60,4 +60,4 @@
     </div>
     <div class="row" id="botacc"></div>
 </div>
-<%- include('partials/footer'); %>
+<%- include('partials/footer'); %> 
