@@ -13,21 +13,33 @@
             </div>
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-4" id="profile-title"><h1>My Profile</h1></div>
+                <div class="col-4" id="profile-title"><h1><b>My Profile</b></h1></div>
                 <div class="col-4"></div>
             </div>
             <div class="row" id="gidgets">
                 <div class="col-1"></div>
                 <div class="col-5" id="status-cont">
-                    <div class="status"><h5>Set Status</h5></div>
+                    <div class="profile-int">
+                        <div class="status"><h6>Set Status</h6></div>
+                        <div class="privacy"><h6>Privacy and safety</h6></div>
+                    </div>
+                    <div class="prof-icons">
+                        <h6>Dropdown</h6>
+                        <i class="fas fa-cog"></i>
+                    </div>
                 </div>
                 <div class="col-5" id="profilepic-cont">
                     <div class="profile-picture">
                         <img id="output" class="img-circle">
                         <input type="file" name="avatar" id="selectpic" onchange="loadFile(event)">
-                        <label for="selectpic" id="avatarlabel">Update Picture</label>
+                        <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5></label>
                     </div>
                 </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10" id="underline"></div>
                 <div class="col-1"></div>
             </div>
             <div class="row" id="updates">
