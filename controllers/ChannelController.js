@@ -47,7 +47,7 @@ class ChannelController{
      * Just gets all channels
      */
     fetchChannels = async (request, response, next) => {
-        
+        console.log('HERE!!!!!!!!!!!!!!!!!!');
         if (!request.session.token) {
            response.redirect('/');
         }

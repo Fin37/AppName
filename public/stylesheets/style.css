@@ -25,7 +25,6 @@ a i {
 }
 
 .error-message {
-  background: rgba(0, 0, 0);
   width: 100%;
   height: 500px;
 }
@@ -33,7 +32,6 @@ a i {
 .errorcontainer {
   width: 100%;
   height: 500px;
-  background: rgba(0, 0, 0, 0.6);
 }
 
 .page-container {
@@ -112,10 +110,27 @@ a:link {
   cursor: pointer;
 }
 
-
 /* Welcome Page */
 
+.welcome-container {
+  background-color: rgb(218, 218, 218);
+}
 
+#welc-top, #welc-bott {
+  height: 100px;
+}
+
+#welc-midd {
+  height: 700px;
+}
+
+#display-message {
+  text-align: center;
+}
+
+#top-margin {
+  height: 260px;
+}
 /* Home Page */
 
 #toprow {
@@ -225,11 +240,15 @@ a:link {
   cursor: pointer;
 }
 
-#update-btn {
+#update-btn, #started-btn {
   margin-top: 20px;
   width: 100%;
   background-color: black;
   color: whitesmoke;
+}
+
+#started-btn {
+  width: 50%;
 }
 
 #output {
@@ -270,4 +289,11 @@ a:link {
 
 .update-status:hover .fa-chevron-right {
   transform: rotate(90);
+}
+
+/* Channel Page */
+
+.channel-title {
+  width: 100%;
+  text-align: center;
 }

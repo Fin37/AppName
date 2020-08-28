@@ -1,4 +1,5 @@
 <%- include('partials/head'); %> 
+<!--
 <div class="welcome-container">
     <div class="welcome">
         <div class="welcome-title"><h1>Welcome</h1></div>
@@ -7,5 +8,28 @@
             <button class="continue-button" href="/home">Get Started</button>
         </div>
     </div>
+</div>
+-->
+<div class="welcome-container">
+    <div class="row" id="welc-top"></div>
+    <div class="row" id="welc-midd">
+        <div class="col-1"></div>
+        <div class="col-10" id="message-back">
+            <div class="row" id="top-margin"></div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8" id="display-message">
+                    <h3>Welcome</h3>
+                    <h4>Thank you for registering</h4>
+                    <h4>Lets get started</h4>
+                    <button class="btn" href="/home" role="button" id="started-btn"><h3>Get Started</h3></button>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row" id="bottom-margin"></div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row" id="welc-bott"></div>
 </div>
 <%- include('partials/footer'); %> 

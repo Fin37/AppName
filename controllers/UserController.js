@@ -58,6 +58,10 @@ class UserController{
         response.render('accountfeedback');
     }
 
+    channels(request, response, next)  {
+        response.render('channels');
+    }
+
     /**
      * Assigns middleware to add Firebase.auth().currentUser to
      * UserModel, request.session, and response.locals variables
