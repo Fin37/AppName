@@ -138,8 +138,57 @@ a:link {
 }
 
 #search {
-  border-style: solid;
+  border-bottom-style: solid;
   border-color: whitesmoke;
+  border-width: 1px;
+}
+
+#top-dn, #bottom-dn {
+  height: 20px;
+}
+
+#mid-dn {
+  border-right-style: solid;
+  border-color: whitesmoke;
+  border-width: 1px;
+}
+
+.fa-bell, .fa-cog, .fa-user-plus {
+  font-size: 1.5em;
+}
+
+#top-nf, #top-cog {
+  height: 35px;
+}
+
+#mid-cog {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.fa-cog {
+  margin-left: 20px;
+}
+
+#top-lgt {
+  height: 30px;
+}
+
+#mid-lgt {
+  border-left-style: solid;
+  border-color: whitesmoke;
+  border-width: 1px;
+}
+
+#logout {
+  text-align: center;
+}
+
+#profile-status {
+  border-top-style: solid;
+  border-color: whitesmoke;
+  border-width: 1px;
 }
 
 #search, #list, #info {
