@@ -2,14 +2,14 @@
 <div class="home">
     <div class="row" id="toprow">
         <div class="col-3" id="search">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
+            <div class="row" id="searchrow">
+                <div class="col-2"></div>
+                <div class="col-8" id="search-container">
                     <form class="form" method="post">
-                        <input type="search" name="search" class="form-control" id="email"" value="" placeholder="Search..">
+                        <input type="search" name="search" class="form-control" id="inputsearch" value="" placeholder="Search..">
                     </form>
                 </div>
-                <div class="col-1" id="search-icon">
+                <div class="col-2" id="search-icon">
                     <i class="fas fa-search"></i>
                 </div>
             </div>
@@ -70,8 +70,10 @@
     <div class="row" id="bottomrow">
         <div class="col-3" id="info">
             <div class="row" id="profile-status">
-                <div class="col-6">
-                    <h1>Profile Picture</h1>
+                <div class="col-6" id="picture-container">
+                    <div class="display-picture">
+                        <img id="profile-image" class="img-circle">
+                    </div>
                 </div>
                 <div class="col-6">
                     <h5>Profile Name</h5>
