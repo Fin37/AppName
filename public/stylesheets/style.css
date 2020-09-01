@@ -153,7 +153,7 @@ a:link {
   border-width: 1px;
 }
 
-.fa-bell, .fa-cog, .fa-user-plus {
+.fa-bell, .fa-cog, .fa-user-plus, .fa-search {
   font-size: 1.5em;
 }
 
@@ -183,6 +183,13 @@ a:link {
 
 #logout {
   text-align: center;
+}
+
+#logout-btn {
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+  padding: 0px;
 }
 
 #profile-status {
