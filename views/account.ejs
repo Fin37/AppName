@@ -32,9 +32,15 @@
                 </div>
                 <div class="col-5" id="profilepic-cont">
                     <div class="profile-picture">
-                        <img id="output" class="img-circle">
+                        <!--
                         <input type="file" name="avatar" id="selectpic" onchange="loadFile(event)" onclick="loadFile()">
                         <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5></label>
+                        -->
+                        <% if (locals.user.photoURL) { %>
+                            <p class="avatar">
+                                <img src="<%= locals.user.photoURL %>">
+                            </p>
+                        <% } %>
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -47,12 +53,12 @@
             <div class="row" id="updates">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <form class="form" action="/account" method="post" autocomplete="off" id="emailinput">
+                    <form class="form" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
                         <label for="displayname" id="displayname">Display Name</label>
-                        <input type="text" name="displayName" class="form-control" id="dispname" value="">
+                        <input type="text" name="displayName" class="form-control" id="dispname" value="<%= locals.user.displayName %>">
 
                         <label for="email" id="emaillabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" value="">
+                        <input type="email" name="email" class="form-control" id="email" value="<%= locals.user.email %>">
         
                         <label for="password" id="pwdlabel">New Password</label>
                         <input type="password" name="password" class="form-control" id="pwd">
