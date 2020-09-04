@@ -1,4 +1,4 @@
-<%- include('partials/head'); %> 
+<%- include('partials/head'); %>
 <div class="account-page">
     <div class="row" id="topacc"></div>
     <div class="row" id="middacc">
@@ -31,15 +31,15 @@
                     </div>
                 </div>
                 <div class="col-5" id="profilepic-cont">
+                    <form class="account-form" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
                     <div class="profile-picture">
-                        <!--
-                        <input type="file" name="avatar" id="selectpic" onchange="loadFile(event)" onclick="loadFile()">
-                        <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5></label>
-                        -->
+                        <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5>
+                            <input type="file" name="avatar" id="selectpic">
+                        </label>
                         <% if (locals.user.photoURL) { %>
-                            <p class="avatar">
-                                <img src="<%= locals.user.photoURL %>">
-                            </p>
+                            <div class="avatar">
+                                <img src="<%= user.photoURL %>">
+                            </div>
                         <% } %>
                     </div>
                 </div>
@@ -53,21 +53,29 @@
             <div class="row" id="updates">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <form class="form" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
+                    <div class="form">
                         <label for="displayname" id="displayname">Display Name</label>
                         <input type="text" name="displayName" class="form-control" id="dispname" value="<%= locals.user.displayName %>">
 
                         <label for="email" id="emaillabel">Email</label>
                         <input type="email" name="email" class="form-control" id="email" value="<%= locals.user.email %>">
-        
-                        <label for="password" id="pwdlabel">New Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd">
-                        
-                        <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control">
-                        <button class="btn" type="submit" role="button" id="update-btn" href="/accountfeedback"><h3>Save Changes</h3></button>
+                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h3>Save Changes</h3></button>
                         <% if (locals.errors && locals.errors.profile) { %>
                             <% locals.errors.profile.forEach(function(error) { %>
+                                <p class="alert alert-primary" role="alert"><%= error %></p>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                    </form>
+                    <form class="password-form" action="/password" method="post" autocomplete="off" id="passinput" enctype="multipart/form-data">
+                        <label for="password" id="pwdlabel">New Password</label>
+                        <input type="password" name="password" class="form-control" id="pwd">
+                    
+                        <label for="passconfirm" id="pwdlabel">Confirm Password</label>
+                        <input type="password" name="passwordConfirm" class="form-control">
+                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h3>Update Password</h3></button>
+                        <% if (locals.errors && locals.errors.password) { %>
+                            <% locals.errors.password.forEach(function(error) { %>
                                 <p class="alert alert-primary" role="alert"><%= error %></p>
                             <% }) %>
                         <% } %>
@@ -80,4 +88,5 @@
     </div>
     <div class="row" id="botacc"></div>
 </div>
+</form>
 <%- include('partials/footer'); %>
