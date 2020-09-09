@@ -133,6 +133,10 @@ a:link {
 }
 /* Home Page */
 
+#namedisplay {
+  background-color: whitesmoke;
+}
+
 #toprow {
   height: 100px;
 }
@@ -166,7 +170,7 @@ a:link {
   border-width: 1px;
 }
 
-.fa-bell, .fa-cog, .fa-user-plus, .fa-search {
+.fa-bell, .fa-cog, .fa-user-plus, .fa-search, .fa-caret-down, .fa-plus, .fa-paperclip, .fa-smile {
   font-size: 1.5em;
 }
 
@@ -216,8 +220,28 @@ a:link {
   background-color: grey;
 }
 
-#chat {
-  background-color: darkgrey;
+#messages {
+  background-color: rgb(218, 218, 218);
+}
+
+#group-container, #friend-container {
+  height: 300px;
+  margin-top: 20px;
+}
+
+#add-g-container, #add-f-container {
+  height: 40px;
+}
+
+#group-dropdown, #friend-dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#friend-add, #group-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #middlerow {
@@ -239,6 +263,16 @@ a:link {
   border-radius: 50%;
   height: 80px;
   width: 80px;
+}
+
+#chat-above, #extra-above {
+  height: 30px;
+}
+
+#extra-middle {
+  height: 50%;
+  display: flex;
+  align-items: center;
 }
 
 

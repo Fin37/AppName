@@ -65,34 +65,38 @@
     </div>
     <div class="row" id="middlerow">
         <div class="col-3" id="list">
-            <div class="row" id="title-groups">
-                <div class="col-6">
+            <div class="row" id="group-container">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <h3>Groups</h3>
                 </div>
-                <div class="col-6">
-                    <h3>Icon</h3>
+                <div class="col-5" id="group-dropdown">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row" id="add-g-container">
+                <div class="col-12" id="group-add">
+                    <i class="fas fa-plus"></i>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-8"></div>
+            <div class="row" id="friend-container">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <h3>Friends</h3>
+                </div>
+                <div class="col-5" id="friend-dropdown">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="row">
-                <div class="group-icon"></div>
-            </div>
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6"></div>
-            </div>
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-8"></div>
-            </div>
-            <div class="row">
-                <div class="dm-icon"></div>
+            <div class="row" id="add-f-container">
+                <div class="col-12" id="friend-add">
+                    <i class="fas fa-plus"></i>
+                </div>
             </div>
         </div>
-        <div class="col-9" id="chat"></div>
+        <div class="col-9" id="messages"></div>
     </div>
     <div class="row" id="bottomrow">
         <div class="col-3" id="info">
@@ -110,11 +114,30 @@
         </div>
         <div class="col-9">
             <div class="row">
-                <div class="col-8">
-                    <h1>Text Input</h1>
+                <div class="col-10">
+                    <div class="row" id="chat-above"></div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="message-input">
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row"></div>
                 </div>
-                <div class="col-4">
-                    <h4>Icons</h4>
+                <div class="col-2">
+                    <div class="row" id="extra-above"></div>
+                    <div class="row" id="extra-middle">
+                        <div class="col-6">
+                            <i class="fas fa-paperclip"></i>
+                        </div>
+                        <div class="col-6">
+                            <i class="far fa-smile"></i>
+                        </div>
+                    </div>
+                    <div class="row"></div>
                 </div>
             </div>
         </div>
