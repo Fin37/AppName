@@ -2,53 +2,68 @@
 <% var users = locals.channels.users %>
 <% var owned = locals.channels.owned %>
 <% var subscribed = locals.channels.subscribed %>
-<div class="row" id="welc-top"></div>
-<div class="row" id="welc-midd">
-	<div class="col-3"></div>
-	<div class="col-6">
-		<div class="channel-title">
-			<h3>Name Group</h3>
+<div class="channel-page">
+	<div class="row" id="welc-top"></div>
+	<div class="row" id="welc-midd">
+		<div class="col-3"></div>
+		<div class="col-6" id="channel-container">
+			<div class="row"></div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="channel-title">
+						<h3>Name Group</h3>
+					</div>
+					<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
+						<input type="text" class="form-control" name="name" placeholder="Group Name" value="">
+						<label for="avatar-upload"><h3>Choose Image</h3>
+							<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
+						</label>
+						<% if (users) { %>
+							<% users.forEach(function(user) { %>
+								<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
+								<p><%= user.name %></p>
+							<% }) %>
+						<% } %>
+						<div class="user-title">
+							<h3>Invite Friends</h3>
+						</div>
+						<input type="text" class="form-control" name="users" placeholder="Invite Users" value="">
+						<button id="update" type="submit">Create</button>
+					</form>	
+					<div id="owned-channels" class="user-channels">
+						<h4>Your Channels</h4>
+					<% if (owned) { %>
+						<ul>
+						<% owned.forEach(function(channel) { %>
+							<li>
+								<img src="<%= channel.image %>" alt="<%= channel.name %>">
+								<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+								<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+							</li>
+						<% }) %>
+						</ul>
+					<% }  %>
+					</div>
+					<div id="subscribed-channels" >
+						<h4>Subscribed Channels</h4>
+					<% if (subscribed) { %>
+						<ul>
+						<% subscribed.forEach(function(channel) { %>
+							<li>
+								<img src="<%= channel.image %>" alt="<%= channel.name %>">
+								<a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
+							</li>
+						<% }) %>
+						</ul>
+					<% }  %>
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
 		</div>
-		<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
-			<input type="text" class="form-control" name="name" placeholder="Display Name" value="">
-			<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
-			<% if (users) { %>
-				<% users.forEach(function(user) { %>
-					<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
-					<p><%= user.name %></p>
-				<% }) %>
-			<% } %>
-			<button id="update" type="submit">Create</button>
-		</form>
-		<div id="owned-channels" class="user-channels">
-			<h4>Your Channels</h4>
-		<% if (owned) { %>
-			<ul>
-			<% owned.forEach(function(channel) { %>
-				<li>
-					<img src="<%= channel.image %>" alt="<%= channel.name %>">
-					<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
-					<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
-				</li>
-			<% }) %>
-			</ul>
-		<% }  %>
-		</div>
-		<div id="subscribed-channels" >
-			<h4>Subscribed Channels</h4>
-		<% if (subscribed) { %>
-			<ul>
-			<% subscribed.forEach(function(channel) { %>
-				<li>
-					<img src="<%= channel.image %>" alt="<%= channel.name %>">
-					<a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
-				</li>
-			<% }) %>
-			</ul>
-		<% }  %>
-		</div>
+		<div class="col-6"></div>
 	</div>
-	<div class="col-6"></div>
+	<div class="row" id="welc-bott"></div>
 </div>
-<div class="row" id="welc-bott"></div>
 <%- include('partials/footer'); %> 

@@ -421,7 +421,11 @@ a:link {
 
 /* Channel Page */
 
-.channel-title {
+.channel-title, .user-title {
   width: 100%;
   text-align: center;
+}
+
+#channel-container {
+  background-color: rgb(218, 218, 218);
 }
