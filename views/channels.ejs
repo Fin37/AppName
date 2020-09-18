@@ -7,7 +7,17 @@
 	<div class="row" id="welc-midd">
 		<div class="col-3"></div>
 		<div class="col-6" id="channel-container">
-			<div class="row"></div>
+			<div class="row" id="above-channels">
+				<div class="col-1"></div>
+                <div class="col-10"></div>
+                <div class="col-1" id="iconcontainer">
+                    <form action="/home" method="GET" id="close-form">
+                        <button type="submit" form="close-form" id="close-button">
+                            <i class="fas fa-times" id="exit-icon"></i>
+                        </button>   
+                    </form>
+                </div>
+			</div>
 			<div class="row">
 				<div class="col-1"></div>
 				<div class="col-10">
@@ -16,23 +26,34 @@
 					</div>
 					<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
 						<input type="text" class="form-control" name="name" placeholder="Group Name" value="">
-						<label for="avatar-upload"><h3>Choose Image</h3>
-							<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
-						</label>
+						<div class="group-avatar">
+							<label for="avatar-upload"><h3>Choose Image</h3>
+								<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
+							</label>
+							<% if (channels.image) { %>
+								<div class="group-image">
+									<img src="<%= channels.image %>">
+								</div>
+							<% } %>
+						</div>
 						<% if (users) { %>
 							<% users.forEach(function(user) { %>
 								<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
 								<p><%= user.name %></p>
 							<% }) %>
 						<% } %>
+						<div class="under-avatar-line"></div>
+						<div class="margin"></div>
 						<div class="user-title">
 							<h3>Invite Friends</h3>
 						</div>
 						<input type="text" class="form-control" name="users" placeholder="Invite Users" value="">
-						<button id="update" type="submit">Create</button>
-					</form>	
+						<button class="btn" id="create-channel" type="submit">Create</button>
+					</form>
 					<div id="owned-channels" class="user-channels">
-						<h4>Your Channels</h4>
+						<div class="your-channels">
+							<h4>Your Channels</h4>
+						</div>
 					<% if (owned) { %>
 						<ul>
 						<% owned.forEach(function(channel) { %>
@@ -45,8 +66,10 @@
 						</ul>
 					<% }  %>
 					</div>
-					<div id="subscribed-channels" >
-						<h4>Subscribed Channels</h4>
+					<div id="subscribed-channels">
+						<div class="subscribed-title">
+							<h4>Subscribed Channels</h4>
+						</div>
 					<% if (subscribed) { %>
 						<ul>
 						<% subscribed.forEach(function(channel) { %>
@@ -61,6 +84,7 @@
 				</div>
 				<div class="col-1"></div>
 			</div>
+			<div class="row"></div>
 		</div>
 		<div class="col-6"></div>
 	</div>

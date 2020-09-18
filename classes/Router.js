@@ -53,6 +53,7 @@ class Router{
     addBaseRoutes() {
         AraDTApp.get('/', this.index);
         AraDTApp.get('/home', this.home);
+        AraDTApp.get('/welcome', this.welcome);
     }
 
 
@@ -74,6 +75,10 @@ class Router{
 
     home(request, response, next) {
         response.render('home');
+    }
+
+    welcome(request, response, next) {
+        response.render('welcome');
     }
 
     // Adds middleware to add HTTP Error to 404 requests

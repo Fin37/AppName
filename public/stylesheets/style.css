@@ -278,6 +278,12 @@ a:link {
 
 /* Account Page */
 
+#close-button, #add-channel-btn {
+  padding: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 #fname, #lname, #pwdlabel, #emaillabel {
   margin-top: 30px;
 }
@@ -300,7 +306,7 @@ a:link {
   text-align: center;
 }
 
-#exit-row {
+#exit-row, #above-channels {
   height: 30px;
 }
 
@@ -372,7 +378,7 @@ a:link {
   cursor: pointer;
 }
 
-#update-btn, #started-btn {
+#update-btn, #started-btn, #create-channel {
   margin-top: 20px;
   width: 100%;
   background-color: black;
@@ -421,11 +427,22 @@ a:link {
 
 /* Channel Page */
 
-.channel-title, .user-title {
+.channel-title, .user-title, #owned-channels, #subscribed-channels {
   width: 100%;
   text-align: center;
 }
 
 #channel-container {
   background-color: rgb(218, 218, 218);
+}
+
+.under-avatar-line {
+  width: 100%;
+  border-bottom-style: solid;
+  border-color: grey;
+  border-width: 1px;
+}
+
+.margin {
+  height: 20px;
 }
