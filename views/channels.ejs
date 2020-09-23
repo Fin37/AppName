@@ -30,12 +30,8 @@
 							<label for="avatar-upload"><h3>Choose Image</h3>
 								<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
 							</label>
-							<% if (channels.image) { %>
-								<div class="group-image">
-									<img src="<%= channels.image %>">
-								</div>
-							<% } %>
 						</div>
+						<img src="<%= channel.image %>">
 						<% if (users) { %>
 							<% users.forEach(function(user) { %>
 								<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
@@ -50,36 +46,39 @@
 						<input type="text" class="form-control" name="users" placeholder="Invite Users" value="">
 						<button class="btn" id="create-channel" type="submit">Create</button>
 					</form>
-					<div id="owned-channels" class="user-channels">
-						<div class="your-channels">
-							<h4>Your Channels</h4>
+					<div class="under-create-line"></div>
+					<div class="your-channels-container">
+						<div id="owned-channels" class="user-channels">
+							<div class="your-channels">
+								<h4>Your Groups</h4>
+							</div>
+						<% if (owned) { %>
+							<ul>
+							<% owned.forEach(function(channel) { %>
+								<li>
+									<img src="<%= channel.image %>" alt="<%= channel.name %>" >
+									<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+									<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								</li>
+							<% }) %>
+							</ul>
+						<% }  %>
 						</div>
-					<% if (owned) { %>
-						<ul>
-						<% owned.forEach(function(channel) { %>
-							<li>
-								<img src="<%= channel.image %>" alt="<%= channel.name %>">
-								<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
-								<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
-							</li>
-						<% }) %>
-						</ul>
-					<% }  %>
-					</div>
-					<div id="subscribed-channels">
-						<div class="subscribed-title">
-							<h4>Subscribed Channels</h4>
+						<div id="subscribed-channels">
+							<div class="subscribed-title">
+								<h4>Subscribed Channels</h4>
+							</div>
+						<% if (subscribed) { %>
+							<ul>
+							<% subscribed.forEach(function(channel) { %>
+								<li>
+									<img src="<%= channel.image %>" alt="<%= channel.name %>">
+									<a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
+								</li>
+							<% }) %>
+							</ul>
+						<% }  %>
 						</div>
-					<% if (subscribed) { %>
-						<ul>
-						<% subscribed.forEach(function(channel) { %>
-							<li>
-								<img src="<%= channel.image %>" alt="<%= channel.name %>">
-								<a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
-							</li>
-						<% }) %>
-						</ul>
-					<% }  %>
 					</div>
 				</div>
 				<div class="col-1"></div>
