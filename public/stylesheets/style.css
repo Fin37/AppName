@@ -188,14 +188,14 @@ a:link {
   margin-left: 20px;
 }
 
-#top-lgt {
-  height: 30px;
-}
-
 #mid-lgt {
   border-left-style: solid;
   border-color: whitesmoke;
   border-width: 1px;
+}
+
+#bottom-lgt {
+  height: 30px;
 }
 
 #logout {
@@ -278,6 +278,10 @@ a:link {
 
 /* Account Page */
 
+.account-page, .channel-page {
+  background-color: white;
+}
+
 #close-button, #add-channel-btn {
   padding: 0;
   border: 0;
@@ -351,19 +355,17 @@ a:link {
   margin-top: 50px;
   margin-left: 120px;
   height: 200px;
-}
-
-.avatar {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 100px;
-  border-radius: 50%;
+  align-items: center;
 }
 
-.avatar img{
-  width: 100%;
-  height: auto;
+.profile-picture img {
+  height: 100px;
+  width: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50%;
 }
 
 #selectpic {
@@ -455,7 +457,7 @@ a:link {
   margin-top: 50px;
 }
 
-.user-channels img {
+.user-channels img, #subscribed-channels img {
   height: 100px;
   width: 100px;
   border-radius: 50%;

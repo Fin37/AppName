@@ -12,13 +12,13 @@
                 <div class="col-md-9" id="middle">
                     <form class="form" action="/register" method="post" autocomplete="off" id="emailinput">
                         <label for="email" id="emailabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email">
+                        <input type="email" name="email" class="form-control" id="email" required>
         
                         <label for="password" id="pwdlabel">Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd">
+                        <input type="password" name="password" class="form-control" id="pwd" required>
 
                         <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control">
+                        <input type="password" name="passwordConfirm" class="form-control" required>
                         <button href="/welcome" class="btn" type="submit" role="button" id="register-btn"><h3>Register</h3></button>
                     <% if (locals.errors && locals.errors.register) { %>
                         <% locals.errors.register.forEach(function(error) { %>

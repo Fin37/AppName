@@ -37,14 +37,17 @@
                 <div class="col-5" id="profilepic-cont">
                     <form class="account-form" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
                     <div class="profile-picture">
-                        <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5>
-                            <input type="file" name="avatar" id="selectpic">
-                        </label>
+                        <img src="<%= locals.user.photoURL %>" id="output">
+                        <!--
                         <% if (locals.user.photoURL) { %>
                             <div class="avatar">
-                                <img src="<%= user.photoURL %>">
+                                <img src="<%= locals.user.photoURL %>" id="output">
                             </div>
                         <% } %>
+                        -->
+                        <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5>
+                            <input type="file" name="avatar" id="selectpic" onchange="loadFile(event)">
+                        </label>
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -62,7 +65,7 @@
                         <input type="text" name="displayName" class="form-control" id="dispname" value="<%= locals.user.displayName %>">
 
                         <label for="email" id="emaillabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" value="<%= locals.user.email %>">
+                        <input type="email" name="email" class="form-control" id="email" value="<%= locals.user.email %>" required>
                         <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h3>Save Changes</h3></button>
                         <% if (locals.errors && locals.errors.profile) { %>
                             <% locals.errors.profile.forEach(function(error) { %>
