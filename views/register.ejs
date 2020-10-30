@@ -1,40 +1,24 @@
-<%- include('partials/head'); %> 
+<%- include('partials/head'); %>
 <div class="login-container">
-    <div class="row" id="topmargin"></div>
-    <div class="row" id="login">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" id="registerheader">
-            <div class="row" id="logintitle">
-                <div class="title"><h1>Sign Up</h1></div>
-            </div>
-            <div class="row" id="formcontainer">
-                <div class="col"></div>
-                <div class="col-md-9" id="middle">
-                    <form class="form" action="/register" method="post" autocomplete="off" id="emailinput">
-                        <label for="email" id="emailabel">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" required>
-        
-                        <label for="password" id="pwdlabel">Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd" required>
+  <form class="d-flex justify-content-center align-items-center h-100" action="/register" method="post">
+    <div id="loginheader" class="d-flex flex-column">
+      <% if (locals.errors && locals.errors.register) { %>
+        <% locals.errors.register.forEach(function(error) { %>
+          <p class="alert alert-danger h5" role="alert"><%= error %></p>
+        <% }) %>
+      <% } %>
 
-                        <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control" required>
-                        <button href="/welcome" class="btn" type="submit" role="button" id="register-btn"><h3>Register</h3></button>
-                    <% if (locals.errors && locals.errors.register) { %>
-                        <% locals.errors.register.forEach(function(error) { %>
-                            <p class="alert alert-primary" role="alert"><%= error %></p>
-                        <% }) %>
-                    <% } %>
-                    </form>
-                    <div class="registercontainer">
-                        <a class="register" href="/"><h4>Already have an account? Sign in here</h4></a>
-                    </div>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-        <div class="col-md-3"></div>
+      <label for="email" id="emailabel" class="h4">Email</label>
+      <input type="email" name="email" class="form-control" id="email" required>
+      <label for="password" id="pwdlabel" class="h4">Password</label>
+      <input type="password" name="password" class="form-control" id="pwd" required>
+      <label for="passconfirm" id="pwdlabel" class="h4">Confirm Password</label>
+      <input type="password" name="passwordConfirm" class="form-control" required>
+      <button class="btn" type="submit" role="button" id="login-btn"><h3>Register</h3></button>
+      <div class="registercontainer">
+        <a class="register" href="/"><h5>Already have an account? Sign in here</h5></a>
+      </div>
     </div>
-    <div class="row" id="bottommargin"></div>
+  </form>
 </div>
 <%- include('partials/footer'); %>

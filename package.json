@@ -12,8 +12,8 @@
     "express": "~4.16.1",
     "express-fileupload": "^1.2.0",
     "express-session": "^1.17.1",
-    "firebase": "^7.18.0",
-    "firebase-admin": "^9.1.0",
+    "firebase": "^7.24.0",
+    "firebase-admin": "^9.3.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "socket.io": "^2.3.0"

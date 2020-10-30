@@ -1,6 +1,5 @@
 <%- include('partials/head'); %>
 <div class="account-page">
-    <div class="row" id="topacc"></div>
     <div class="row" id="middacc">
         <div class="col-3"></div>
         <div class="col-6" id="account-container">
@@ -11,7 +10,7 @@
                     <form action="/home" method="GET" id="close-form">
                         <button type="submit" form="close-form" id="close-button">
                             <i class="fas fa-times" id="exit-icon"></i>
-                        </button>   
+                        </button>
                     </form>
                 </div>
             </div>
@@ -20,31 +19,11 @@
                 <div class="col-4" id="profile-title"><h1><b>My Profile</b></h1></div>
                 <div class="col-4"></div>
             </div>
-            <div class="row" id="gidgets">
-                <div class="col-1"></div>
-                <div class="col-5" id="status-cont">
-                    <div class="profile-int">
-                        <div class="status"><h6>Set Status</h6></div>
-                        <div class="privacy"><h6>Privacy and safety</h6></div>
-                    </div>
-                    <div class="prof-icons">
-                        <div class="update-status">
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
-                        <i class="fas fa-cog"></i>
-                    </div>
-                </div>
-                <div class="col-5" id="profilepic-cont">
-                    <form class="account-form" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
-                    <div class="profile-picture">
+            <div>
+                <div id="profilepic-cont" class="w-100">
+                    <form class="w-100" action="/account" method="post" autocomplete="off" id="emailinput" enctype="multipart/form-data">
+                    <div class="d-flex flex-column align-items-center w-100">
                         <img src="<%= locals.user.photoURL %>" id="output">
-                        <!--
-                        <% if (locals.user.photoURL) { %>
-                            <div class="avatar">
-                                <img src="<%= locals.user.photoURL %>" id="output">
-                            </div>
-                        <% } %>
-                        -->
                         <label for="selectpic" id="avatarlabel"><h5>Update Picture</h5>
                             <input type="file" name="avatar" id="selectpic" onchange="loadFile(event)">
                         </label>
@@ -61,31 +40,30 @@
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="form">
+                        <% if (locals.errors && locals.errors.profile) { %>
+                            <% locals.errors.profile.forEach(function(error) { %>
+                                <p class="alert alert-danger" role="alert"><%= error %></p>
+                            <% }) %>
+                        <% } %>
                         <label for="displayname" id="displayname">Display Name</label>
                         <input type="text" name="displayName" class="form-control" id="dispname" value="<%= locals.user.displayName %>">
 
-                        <label for="email" id="emaillabel">Email</label>
+                        <label for="email" class="mt-3">Email</label>
                         <input type="email" name="email" class="form-control" id="email" value="<%= locals.user.email %>" required>
-                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h3>Save Changes</h3></button>
-                        <% if (locals.errors && locals.errors.profile) { %>
-                            <% locals.errors.profile.forEach(function(error) { %>
-                                <p class="alert alert-primary" role="alert"><%= error %></p>
-                            <% }) %>
-                        <% } %>
+                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h5>Save Changes</h5></button>
                     </div>
                     </form>
                     <form class="password-form" action="/password" method="post" autocomplete="off" id="passinput" enctype="multipart/form-data">
-                        <label for="password" id="pwdlabel">New Password</label>
-                        <input type="password" name="password" class="form-control" id="pwd">
-                    
-                        <label for="passconfirm" id="pwdlabel">Confirm Password</label>
-                        <input type="password" name="passwordConfirm" class="form-control">
-                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h3>Update Password</h3></button>
                         <% if (locals.errors && locals.errors.password) { %>
                             <% locals.errors.password.forEach(function(error) { %>
-                                <p class="alert alert-primary" role="alert"><%= error %></p>
+                                <p class="alert alert-danger" role="alert"><%= error %></p>
                             <% }) %>
                         <% } %>
+                        <label for="password">New Password</label>
+                        <input type="password" name="password" class="form-control" id="pwd">
+                        <label for="passconfirm" class="mt-3">Confirm Password</label>
+                        <input type="password" name="passwordConfirm" class="form-control">
+                        <button class="btn" type="submit" role="button" id="update-btn" href="/account"><h5>Update Password</h5></button>
                     </form>
                 </div>
                 <div class="col-1"></div>
@@ -93,7 +71,6 @@
         </div>
         <div class="col-3"></div>
     </div>
-    <div class="row" id="botacc"></div>
 </div>
 </form>
 <%- include('partials/footer'); %>

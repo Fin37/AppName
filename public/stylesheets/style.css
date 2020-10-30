@@ -1,7 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-  background-color: #EAE1DF;
+  background-color: #fff;
 }
 
 a {
@@ -45,27 +45,14 @@ a i {
 .login-container {
   height: 100vh;
   width: 100vw;
-}
-
-#topmargin, #bottommargin {
-  margin: 100px;
-}
-
-#login {
-  text-align: center;
+  background: rgba(0, 0, 0, 0) url("/img/background.jpg") repeat fixed center center / cover;
 }
 
 #loginheader {
-  height: 500px;
-  background-image: linear-gradient(#9781A8, rgb(191, 189, 189));
-}
-
-.title {
-  margin-top: 15px;
-}
-
-#logintitle {
-  display: inline-block;
+  border-radius: 1rem;
+  padding: 40px;
+  background: #fff;
+  width: 500px;
 }
 
 .form, .password-form {
@@ -88,198 +75,42 @@ a:link {
   padding: 0;
 }
 
-.loginbutton {
-  padding: 12px 0;
-}
-
 .register h4 {
   margin-top: 20px;
   color: #3E71F0;
 }
 
-#registerheader {
-  height: 600px;
-  background-image: linear-gradient(#9781A8, rgb(191, 189, 189));
+.registercontainer {
+  text-align: center;
+  margin-top: 30px;
 }
 
-.registercontainer {
-  margin-top: 30px;
+#login-btn:hover, #register-btn:hover {
+  background-color:#d4cdcc;
 }
 
 .register h4:hover {
   cursor: pointer;
 }
 
-/* Welcome Page */
-
-.welcome-container {
-  background-color: rgb(218, 218, 218);
-}
-
-#welc-top, #welc-bott {
-  height: 100px;
-}
-
-#welc-midd {
-  height: 1250px;
-}
-
-#display-message {
-  text-align: center;
-}
-
-#top-margin {
-  height: 260px;
-}
 /* Home Page */
 
-#namedisplay {
-  background-color: whitesmoke;
-}
-
-#toprow {
-  height: 100px;
-}
-
-#search {
-  border-bottom-style: solid;
-  border-color: whitesmoke;
-  border-width: 1px;
-}
-
-#searchrow {
-  height: 100%;
-}
-
-#search-icon {
-  display: flex;
-  align-items: center;
-}
-
-#search-container {
-  padding: 0pc;
-}
-
-#top-dn, #bottom-dn {
-  height: 20px;
-}
-
-#mid-dn {
-  border-right-style: solid;
-  border-color: whitesmoke;
-  border-width: 1px;
-}
-
-.fa-bell, .fa-cog, .fa-user-plus, .fa-search, .fa-caret-down, .fa-plus, .fa-paperclip, .fa-smile {
-  font-size: 1.5em;
-}
-
-#top-nf, #top-cog {
-  height: 35px;
-}
-
-#mid-cog {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-}
-
-.fa-cog {
-  margin-left: 20px;
-}
-
-#mid-lgt {
-  border-left-style: solid;
-  border-color: whitesmoke;
-  border-width: 1px;
-}
-
-#bottom-lgt {
-  height: 30px;
-}
-
-#logout {
-  text-align: center;
-}
-
-#logout-btn {
-  width: 100%;
-  background-color: black;
-  color: whitesmoke;
-  padding: 0px;
-}
-
-#profile-status {
-  border-top-style: solid;
-  border-color: #f5f5f5;
-  border-width: 1px;
-  height: 100%;
-}
-
-#search, #list, #info {
-  background-color: grey;
+#home-group {
+  margin-top: 6px;
 }
 
 #messages {
   background-color: rgb(218, 218, 218);
 }
 
-#group-container, #friend-container {
-  height: 300px;
-  margin-top: 20px;
+.fa-cogs {
+  margin-right: 20px;
 }
-
-#add-g-container, #add-f-container {
-  height: 40px;
-}
-
-#group-dropdown, #friend-dropdown {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#friend-add, #group-add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#middlerow {
-  height: 800px;
-}
-
-#bottomrow {
-  height: 100px;
-}
-
-#picture-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#profile-image {
-  border-style: solid;
-  border-radius: 50%;
-  height: 80px;
-  width: 80px;
-}
-
-#chat-above, #extra-above {
-  height: 30px;
-}
-
-#extra-middle {
-  height: 50%;
-  display: flex;
-  align-items: center;
-}
-
 
 /* Account Page */
 
 .account-page, .channel-page {
-  background-color: white;
+  background: rgba(0, 0, 0, 0) url("/img/night farm.jpg") repeat fixed center center / cover;
 }
 
 #close-button, #add-channel-btn {
@@ -292,21 +123,16 @@ a:link {
   margin-top: 30px;
 }
 
-#icon-container {
-  display: flex;
-  justify-content: end;
-}
-
 #topacc, #botacc {
   height: 100px;
 }
 
 #middacc {
-  height: 1050px;
+  height: 900px;
 }
 
 #account-container {
-  background-color: rgb(218, 218, 218);
+  background-color: #EAEAEA;
   text-align: center;
 }
 
@@ -314,81 +140,31 @@ a:link {
   height: 30px;
 }
 
-#gidgets {
-  height: 200px;
-}
-
-.status {
-  text-align: start;
-}
-
-#status-cont, #profilepic-cont {
-  display: flex;
-  align-items: center;
-}
-
-.profile-int, .prof-icons {
-  text-align: start;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.profile-int {
-  width: 300px;
-}
-
-.prof-icons {
-  display: flex;
-  align-items: center;
-  width: 100px;
-  margin-left: 50px;
-}
-
-#updates {
-  height: 500px;
-}
-
-
-.profile-picture {
-  margin-top: 50px;
-  margin-left: 120px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-picture img {
-  height: 100px;
-  width: 100px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 50%;
-}
-
 #selectpic {
   display: none;
 }
 
 #avatarlabel {
+  padding: 0;
   margin-top: 15px;
+  border-radius: 4px;
+  width: 30%;
+  background-color: rgb(212, 212, 212);
 }
 
-#avatarlabel:hover, .fa-times:hover {
+#avatarlabel:hover, .fa-times:hover, #image-choose:hover {
   cursor: pointer;
 }
 
 #update-btn, #started-btn, #create-channel {
   margin-top: 20px;
   width: 100%;
-  background-color: black;
-  color: whitesmoke;
+  background-color: rgb(212, 212, 212);
+  color: black;
 }
 
-#started-btn {
-  width: 50%;
+#update-btn:hover, #started-btn:hover, #create-channel:hover, #avatarlabel:hover {
+  background-color: rgb(177, 177, 177);
 }
 
 #output {
@@ -414,19 +190,6 @@ a:link {
   border-width: 1px;
 }
 
-.fa-cog {
-  font-size: 1.6em;
-  margin-bottom: 5px;
-}
-
-.fa-chevron-right {
-  font-size: 1.6em;
-}
-
-.update-status:hover .fa-chevron-right {
-  transform: rotate(90);
-}
-
 /* Channel Page */
 
 .channel-title, .user-title, #owned-channels, #subscribed-channels {
@@ -434,18 +197,22 @@ a:link {
   text-align: center;
 }
 
-#channel-container {
-  background-color: rgb(218, 218, 218);
+.group-avatar {
+  text-align: center;
 }
 
-.under-avatar-line, .under-create-line {
+#channel-container {
+  background-color: #EAEAEA;
+}
+
+.under-avatar-line, .under-create-line, .under-name-line {
   width: 100%;
   border-bottom-style: solid;
   border-color: grey;
   border-width: 1px;
 }
 
-.under-create-line {
+.under-create-line, .under-name-line, #image-choose {
   margin-top: 30px;
 }
 
@@ -461,4 +228,12 @@ a:link {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+}
+
+.left-sidebar {
+  background-color: #EAEAEA;
+}
+
+.header {
+  background-color: #EAEAEA;
 }

@@ -26,25 +26,25 @@
 					</div>
 					<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
 						<input type="text" class="form-control" name="name" placeholder="Group Name" value="">
-						<div class="group-avatar">
-							<label for="avatar-upload"><h3>Choose Image</h3>
+						<div class="group-avatar d-flex align-items-center">
+							<div class="under-name-line"></div>
+							<label for="avatar-upload" id="image-choose"><h3>Choose Image</h3>
 								<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
 							</label>
+							<img src="<%= channel.image %>" id="output">
 						</div>
-						<img src="<%= channel.image %>">
+						<div class="under-avatar-line"></div>
+						<div class="margin"></div>
+						<div class="user-title">
+							<h3>Invite Friends</h3>
+						</div>
 						<% if (users) { %>
 							<% users.forEach(function(user) { %>
 								<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
 								<p><%= user.name %></p>
 							<% }) %>
 						<% } %>
-						<div class="under-avatar-line"></div>
-						<div class="margin"></div>
-						<div class="user-title">
-							<h3>Invite Friends</h3>
-						</div>
-						<input type="text" class="form-control" name="users" placeholder="Invite Users" value="">
-						<button class="btn" id="create-channel" type="submit">Create</button>
+						<button class="btn" id="create-channel" type="submit"><h5>Create Group</h5></button>
 					</form>
 					<div class="under-create-line"></div>
 					<div class="your-channels-container">
